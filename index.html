@@ -8,99 +8,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
-    <!-- Google Fonts link -->
-
-    <style>
-        /* Set the body's background color and display styles */
-        body {
-            background-color: black;
-            /* Background color set to black */
-            margin: 0;
-            /* Remove default margin */
-            height: 100vh;
-            /* Full height */
-            display: flex;
-            /* Use flexbox for layout */
-            flex-direction: column;
-            /* Stack items vertically */
-            justify-content: center;
-            /* Center horizontally */
-            align-items: center;
-            /* Center vertically */
-        }
-
-        img {
-            max-width: 100%;
-            /* Ensure the image is responsive */
-            max-height: 80vh;
-            /* Adjust height to leave space for the text */
-        }
-
-        h1 {
-            color: #FF0000;
-            /* Primary red color */
-            font-size: 5em;
-            /* Large font size */
-            text-align: center;
-            /* Center text */
-            font-family: "League Gothic", sans-serif;
-            /* Font style */
-            animation: neon 1.5s ease-in-out infinite alternate;
-            /* Neon effect */
-            margin-bottom: 0.5em;
-            /* Adjust spacing between title and subtitle */
-        }
-
-        h2 {
-            color: #F0F0F0;
-            /* Charcoal gray color */
-            font-size: 1.5em;
-            /* Appropriate font size for subtitles */
-            text-align: center;
-            /* Center text */
-            font-family: "League Gothic", sans-serif;
-            /* Consistent font style */
-            margin-top: 0;
-            /* Ensure tight spacing between title and subtitle */
-        }
-
-        /* Keyframes for neon light effect */
-        @keyframes neon {
-            from {
-                text-shadow:
-                    0 0 5px #fff,
-                    0 0 10px #fff,
-                    0 0 20px #ff2d2d,
-                    0 0 30px #ff2d2d,
-                    0 0 40px #ff2d2d,
-                    0 0 55px #ff2d2d,
-                    0 0 75px #ff2d2d;
-            }
-
-            to {
-                text-shadow:
-                    0 0 10px #fff,
-                    0 0 20px #ff4d4d,
-                    0 0 30px #ff4d4d,
-                    0 0 40px #ff4d4d,
-                    0 0 50px #ff4d4d,
-                    0 0 65px #ff4d4d,
-                    0 0 85px #ff4d4d;
-            }
-        }
-    </style>
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Image path can be replaced with your desired image URL -->
-    <div>
+    <div class="header">
         <h1>KVENNJEGUTANE</h1>
         <img style="margin-top: -5.5em;"
-            src="./assets/DALL_E_A_vintage_mincer__featuring_a_sleek_silver_finish_and_a_mechanical_design_with_a_hand_crank_and_wooden_handle.png"
+            src="assets/images/DALL_E_A_vintage_mincer__featuring_a_sleek_silver_finish_and_a_mechanical_design_with_a_hand_crank_and_wooden_handle.png"
             alt="Centered Image">
-        <h2>EIN ANALYSE AV VÅRSESONGEN 2024 PÅ <a href="https://www.quizkverna.no/">QUIZKVERNA</a>
-        </h2>
+        <h2>EIN ANALYSE AV VÅRSESONGEN 2024 PÅ <a href="https://www.quizkverna.no/">QUIZKVERNA</a></h2>
     </div>
+
+    <div class="analysis">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est
+            laborum.</p>
+
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
