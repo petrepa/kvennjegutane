@@ -1,0 +1,154 @@
+/* Set the body's background color and display styles */
+body {
+  background-color: black;
+  /* Background color set to black */
+  margin: 0;
+  /* Full height */
+  /* height: 100%; */
+  display: flex;
+  /* Use flexbox for layout */
+  flex-direction: column;
+  /* Stack items vertically */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+}
+
+img {
+  max-width: 100%;
+  /* Ensure the image is responsive */
+  max-height: 80vh;
+  /* Adjust height to leave space for the text */
+}
+
+h1 {
+  color: #FF0000;
+  /* Primary red color */
+  font-size: 5em;
+  /* Large font size */
+  text-align: center;
+  /* Center text */
+  font-family: "League Gothic", sans-serif;
+  /* Font style */
+  animation: neon 1.5s ease-in-out infinite alternate;
+  /* Neon effect */
+  margin-bottom: 0.5em;
+  /* Adjust spacing between title and subtitle */
+}
+
+h2,
+h3 {
+  /* Appropriate font size for subtitles */
+  text-align: center;
+  /* Center text */
+  font-family: 'Fira Sans', sans-serif;
+  /* Consistent font style */
+  margin-top: 0;
+  /* Ensure tight spacing between title and subtitle */
+}
+
+h2 {
+  color: #F5F5F5;
+  font-size: 2em;
+}
+
+h3 {
+  color: #CC1718;
+  font-size: 2em;
+}
+
+/* Keyframes for neon light effect */
+@keyframes neon {
+  from {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #ff2d2d,
+      0 0 30px #ff2d2d,
+      0 0 40px #ff2d2d,
+      0 0 55px #ff2d2d,
+      0 0 75px #ff2d2d;
+  }
+
+  to {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #ff4d4d,
+      0 0 30px #ff4d4d,
+      0 0 40px #ff4d4d,
+      0 0 50px #ff4d4d,
+      0 0 65px #ff4d4d,
+      0 0 85px #ff4d4d;
+  }
+}
+
+.header {
+  min-height: 100vh;
+  /* margin-top: 100em; */
+  /* border: #CC1718 1px solid; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#e66465, black);
+}
+
+.analysis-section {
+  color: #FFFFFF;
+  /* Dark grey background */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  max-width: 60em;
+}
+
+
+p,
+ul {
+  font-family: 'Hind Guntur', sans-serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #F5F5F5;
+  margin: 0 0 1em;
+}
+
+.data-graph {
+  background-color: #191C24;
+  padding: 2em;
+  min-height: 15em;
+  max-height: 15em;
+  min-width: 30em;
+  border-radius: .5em;
+}
+
+#pointsChart {
+  height: auto;
+  width: 90%;
+
+}
+
+.data-heading {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1em;
+  text-align: left;
+  line-height: 1.6;
+  color: #F5F5F5;
+  display: flexbox;
+  justify-content: flex-start;
+}
+
+
+a:visited {
+  color: #FFD4DB;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #DF10D8;
+  background-color: transparent;
+  text-decoration: underline;
+  transition: 0.3s;
+}
