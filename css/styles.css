@@ -3,9 +3,8 @@ body {
   background-color: black;
   /* Background color set to black */
   margin: 0;
-  /* Remove default margin */
-  height: 100vh;
   /* Full height */
+  /* height: 100%; */
   display: flex;
   /* Use flexbox for layout */
   flex-direction: column;
@@ -38,17 +37,25 @@ h1 {
   /* Adjust spacing between title and subtitle */
 }
 
-h2 {
-  color: #F0F0F0;
-  /* Charcoal gray color */
-  font-size: 1.5em;
+h2,
+h3 {
   /* Appropriate font size for subtitles */
   text-align: center;
   /* Center text */
-  font-family: "League Gothic", sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   /* Consistent font style */
   margin-top: 0;
   /* Ensure tight spacing between title and subtitle */
+}
+
+h2 {
+  color: #F5F5F5;
+  font-size: 2em;
+}
+
+h3 {
+  color: #CC1718;
+  font-size: 2em;
 }
 
 /* Keyframes for neon light effect */
@@ -76,12 +83,72 @@ h2 {
   }
 }
 
-.analysis {
+.header {
+  min-height: 100vh;
+  /* margin-top: 100em; */
+  /* border: #CC1718 1px solid; */
+  width: 100%;
   display: flex;
-  /* Use flexbox for layout */
   flex-direction: column;
-  /* Stack items vertically */
   justify-content: center;
-  color: #F0F0F0;
-  width: 60%;
+  align-items: center;
+  background: linear-gradient(#e66465, black);
+}
+
+.analysis-section {
+  color: #FFFFFF;
+  /* Dark grey background */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  max-width: 60em;
+}
+
+
+p,
+ul {
+  font-family: 'Hind Guntur', sans-serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #F5F5F5;
+  margin: 0 0 1em;
+}
+
+.data-graph {
+  background-color: #191C24;
+  padding: 2em;
+  min-height: 15em;
+  max-height: 15em;
+  min-width: 30em;
+  border-radius: .5em;
+}
+
+#pointsChart {
+  height: auto;
+  width: 90%;
+
+}
+
+.data-heading {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1em;
+  text-align: left;
+  line-height: 1.6;
+  color: #F5F5F5;
+  display: flexbox;
+  justify-content: flex-start;
+}
+
+
+a:visited {
+  color: #FFD4DB;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #DF10D8;
+  background-color: transparent;
+  text-decoration: underline;
+  transition: 0.3s;
 }
