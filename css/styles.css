@@ -118,10 +118,11 @@ ul {
   background-color: #191C24;
   padding: 2em;
   min-height: 15em;
-  max-height: 15em;
+  max-height: 25em;
   min-width: 30em;
   max-width: 90%;
   border-radius: .5em;
+  margin: 2em;
 }
 
 #pointsChart {
