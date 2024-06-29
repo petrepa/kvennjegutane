@@ -44,12 +44,23 @@
             Her er ei analyse av gutane sin prestasjon denne sesongen.
         </p>
         <h3>Lagsamansetjing og prestasjon over tid</h3>
-        <p>Laget har hatt stabilt oppmøte gjennom heile sesongen, og har faktisk møtt opp til kvar einaste quiz. Dette
-            er ei forbetring mot førre sesong! Østen og Peter har møtt opp konsekvent. Dei møtte endåtil opp til
-            sesongavslutninga og gjennomførte to kategoriar, sjølv om dei i grunnen var dobbeltbooka denne kvelden.
+        <p>Laget har hatt stabilt oppmøte gjennom heile sesongen, og har faktisk møtt opp til kvar einaste quiz og sikra
+            poeng. Dette
+            er ei forbetring mot førre sesong! Østen og Peter har møtt opp konsekvent. Sjølv om laget var plaga med
+            masteroppgåve-innleveringar, reise og familiebesøk, klarte Peter og Østen å skrape ihop eit lite oppmøte til
+            dei to første kategoriane av sesongavslutninga.
             Dermed har siste runde noko utslag i dataa, så desse er i nokre utrekningar ignorerte. Likevel så sikra
             dette sikra 100% oppmøte for laget gjennom sesongen!
         </p>
+
+        <div class="data-graph">
+            <div class="data-heading">Poeng pr runde</div>
+            <canvas id="pointsChart"></canvas>
+        </div>
+
+        <p>Ikkje minst må vi takke dei kjekke innbyttarane vi har hatt denne sesongen, når gutane ikkje har klart å
+            stille fullt lag sjølv. Tusen takk Synnøve, Sara, Charlotte, Amanda og Oda. Utan <a
+                href="https://ordbokene.no/nno/bm,nn/taus">kvennjetausene</a> hadde ikkje kvennjegutane klart seg ❤️</p>
         <h3>Kategoripoeng</h3>
 
         <div class="data-graph">
@@ -58,7 +69,13 @@
         </div>
         <p>Her ser du ei gjennomsnitts-oppsummering av poenga gjennom sesongen samanlikna med maksimale poeng mogleg i
             kvar kategori.</p>
-        <div class="key-data-points">
+        <div class="data-selector-container">
+            <div class="data-selector">
+                <div class="data-selector-button selected" onclick="showAverages()" id="avgBtn">Gjennomsnitt</div>
+                <div class="data-selector-button" onclick="showStdDeviations()" id="stdDevBtn">Standardavvik</div>
+            </div>
+        </div>
+        <div class="key-data-points" id="average">
             <div class="key-data-point" title="Maksimale poeng: 12">
                 <div class="key-data-point-header">Kategori 1</div>
                 <div class="key-data-point-value">6,7</div>
@@ -102,8 +119,42 @@
                 </div>
             </div>
         </div>
-        <p>Som ein kan sjå så ligg vi jamnt over ganske midt på poengmessig. Heldigvis får vi også mykje poeng i dei
-            siste kategoriane. Desse poenga gjer at vi brukar å klatre litt på tampen av runda.</p>
+        <div class="key-data-points" id="stdDeviation">
+            <div class="key-data-point">
+                <div class="key-data-point-header">Kategori 1</div>
+                <div class="key-data-point-value">2,1</div>
+                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+            </div>
+            <div class="key-data-point">
+                <div class="key-data-point-header">Kategori 2</div>
+                <div class="key-data-point-value">2,5</div>
+                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+            </div>
+            <div class="key-data-point">
+                <div class="key-data-point-header">Kategori 3</div>
+                <div class="key-data-point-value">1,5</div>
+                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+            </div>
+            <div class="key-data-point">
+                <div class="key-data-point-header">Kategori 4</div>
+                <div class="key-data-point-value">4,4</div>
+                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+            </div>
+            <div class="key-data-point">
+                <div class="key-data-point-header">Kategori 5</div>
+                <div class="key-data-point-value">3,8</div>
+                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+            </div>
+            <div class="key-data-point">
+                <div class="key-data-point-header">Kategori 6</div>
+                <div class="key-data-point-value">3,8</div>
+                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+            </div>
+        </div>
+        <p>Som ein kan sjå så ligg vi jamnt over ganske midt på poengmessig. Frå standardavvika kan vi sjå at vi er mest
+            konsise i dei første kategoriane – altså konsist litt dårlege. Litt meir spreidning i dei siste, men
+            heldigvis er her mykje poeng å hente. Og dette gjer vi periodisk,
+            så desse poenga gjer at vi brukar å klatre litt på tampen av runda.</p>
         <h3>Lokalisering og seteplassering</h3>
         <p>Gjennom sesongen har vi også notert ned plassering i lokalet. Når ein ser på lokaliseringsskifta (t.d. ved
             inngangsdøra mot TTYVEN), kan sjå om det er noko korrelasjon med prestasjon. For eksempel ser runder spelte
@@ -116,10 +167,14 @@
         <h3>Relativ rangering</h3>
         <p>
             Forholdet mellom plassering og deltakande lag gir oss litt innsikt i kor godt laget gjer det relativt til
-            andre. Ein høgare
-            verdi eller verdi nærare 1 tyder på dårlegare relativ prestasjon. Vi ser at gutane plasserer seg generelt i
-            nedre halvdel, som tyder på at laga rundt oss generelt er quizkvassare.
+            konkurrentane våre. Ein høgare
+            verdi, ein verdi nærare 1, tyder på dårlegare relativ prestasjon. Vi ser at gutane strekk seg mot 1 heile
+            tida, som tyder på at laga rundt oss generelt er quizkvassare.
         </p>
+        <div class="data-graph" id="relativePositionChartContainer">
+            <div class="data-heading">Relativ resultats-plassering</div>
+            <canvas id="relativePositionChart"></canvas>
+        </div>
         <h3>Strategiske tiltak til neste sesong</h3>
         <ul>
             <li>Fokusområde</li>
@@ -138,12 +193,6 @@
             </ul>
         </ul>
     </div>
-    <div class="data-graph">
-        <div class="data-heading">Poeng pr runde</div>
-        <canvas id="pointsChart"></canvas>
-    </div>
-
-
     <script src="js/script.js"></script>
 </body>
 

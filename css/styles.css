@@ -244,6 +244,7 @@ a:hover {
   align-items: center;
   padding-top: .1em;
   padding-bottom: .1em;
+
 }
 
 .key-data-point-value-relation-percentage {
@@ -254,4 +255,38 @@ a:hover {
   box-shadow:
     0 0 10px #085C37,
     0 0 10px #5ba757;
+}
+
+#stdDeviation {
+  display: none;
+}
+
+.data-selector-container {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+
+.data-selector {
+  border: #C9C9C9 0.1em solid;
+  border-radius: .7em;
+  display: flex;
+  justify-content: center;
+  color: #C9C9C9;
+}
+
+.data-selector-button {
+  padding: .5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  background-color: #191C24;
+  border: #191C24 0.1em solid;
+  border-radius: .7em;
+}
+
+.selected {
+  background-color: #C9C9C9;
+  border: #191C24 0.1em solid;
+  border-radius: .7em;
+  color: #191C24;
 }

@@ -31,6 +31,40 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('relativePositionChart').getContext('2d');
+    const points = [0.75, 0.53, 0.41, 0.78, 0.55, 0.58, 0.74, 0.65, 0.64, 0.75, 1.00];  // Points for each Runde
+    const relativePositionChart = new Chart(ctx, {
+        type: 'line',  // Type of chart: line graph
+        data: {
+            labels: Rundes,  // X-axis labels
+            datasets: [{
+                label: '',
+                data: points,  // Y-axis data
+                backgRundeColor: 'rgba(204, 23, 24, 0.6)',  // Color of the area under the line
+                borderColor: 'rgba(204, 23, 24, 1)',  // Color of the line
+                borderWidth: 1,
+                fill: true
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false  // Hide the legend
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true  // Start the y-axis at 0
+                }
+            },
+            responsive: true,  // Ensure the graph is responsive
+            maintainAspectRatio: false  // Maintain aspect ratio
+
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('pointsPerCategoryChart').getContext('2d');
 
     // Categories on the X-axis
@@ -75,20 +109,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-<script>
-    function showAverages() {
-        // Hide standard deviations and show averages
-        document.querySelectorAll('.key-data-point').forEach(point => {
-            point.querySelector('.key-data-point-value').style.display = 'block';
-            point.querySelector('.key-data-point-std').style.display = 'none';
-        });
-    }
+function showAverages() {
+    // Hide standard deviations and show averages
+    document.getElementById('average').style.display = 'flex';
+    document.getElementById('stdDeviation').style.display = 'none';
+    document.getElementById('stdDevBtn').classList.remove('selected');
+    document.getElementById('avgBtn').classList.add('selected');
+}
 
-    function showStdDeviations() {
-        // Hide averages and show standard deviations
-        document.querySelectorAll('.key-data-point').forEach(point => {
-            point.querySelector('.key-data-point-value').style.display = 'none';
-            point.querySelector('.key-data-point-std').style.display = 'block';
-        });
-    }
-</script>
+function showStdDeviations() {
+    // Hide averages and show standard deviations
+    document.getElementById('average').style.display = 'none';
+    document.getElementById('stdDeviation').style.display = 'flex';
+    document.getElementById('avgBtn').classList.remove('selected');
+    document.getElementById('stdDevBtn').classList.add('selected');
+}
