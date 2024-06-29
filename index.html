@@ -39,159 +39,206 @@
     </div>
 
     <div class="analysis-section">
-        <p>Gjennom vårsesongen 2024 deltok Kvennjegutane på quiz på Quizkverna, og for kvar quiz noterte dei ned poenga
-            og anna nyttig og unyttig data.
-            Her er ei analyse av gutane sin prestasjon denne sesongen.
-        </p>
-        <h3>Lagsamansetjing og prestasjon over tid</h3>
-        <p>Laget har hatt stabilt oppmøte gjennom heile sesongen, og har faktisk møtt opp til kvar einaste quiz og sikra
-            poeng. Dette
-            er ei forbetring mot førre sesong! Østen og Peter har møtt opp konsekvent. Sjølv om laget var plaga med
-            masteroppgåve-innleveringar, reise og familiebesøk, klarte Peter og Østen å skrape ihop eit lite oppmøte til
-            dei to første kategoriane av sesongavslutninga.
-            Dermed har siste runde noko utslag i dataa, så desse er i nokre utrekningar ignorerte. Likevel så sikra
-            dette sikra 100% oppmøte for laget gjennom sesongen!
-        </p>
+        <div class="definition">
+            <div class="phonetics">
+                <span style="font-weight: bold;">[kvennjegu:tane]</span> <span
+                    style="font-style: italic;">substantiv</span>
+            </div>
+            <div class="definition-explanation">Samansett substantiv frå sunnmørsdialekta, der "kvennje" kjem av å
+                kverne. Ofte brukt om gutane som
+                deltek
+                på Quizkverna</div>
+        </div>
+        <div class="text-section" style="margin-top: 2em;">
+            <p>Gjennom vårsesongen 2024 deltok Kvennjegutane på quiz på Quizkverna, og for kvar quiz noterte dei ned
+                poenga
+                og anna nyttig og unyttig data.
+                Her er ei analyse av gutane sin prestasjon denne sesongen.
+            </p>
+            <h3>Lagsamansetjing og prestasjon over tid</h3>
+            <p>Laget har hatt stabilt oppmøte gjennom heile sesongen, og har faktisk møtt opp til kvar einaste quiz og
+                sikra
+                poeng. Dette
+                er ei forbetring mot førre sesong!
+            </p>
+        </div>
 
         <div class="data-graph">
             <div class="data-heading">Poeng pr runde</div>
             <canvas id="pointsChart"></canvas>
         </div>
 
-        <p>Ikkje minst må vi takke dei kjekke innbyttarane vi har hatt denne sesongen, når gutane ikkje har klart å
-            stille fullt lag sjølv. Tusen takk Synnøve, Sara, Charlotte, Amanda og Oda. Utan <a
-                href="https://ordbokene.no/nno/bm,nn/taus">kvennjetausene</a> hadde ikkje kvennjegutane klart seg ❤️</p>
-        <h3>Kategoripoeng</h3>
+        <div class="text-section">
+            <p>
+                Peter har 100% oppmøte, medan dei andre kjem hakk i hel. Sjølv om laget var plaga med
+                masteroppgåve-innleveringar, reise og familiebesøk, klarte Peter og Østen å skrape ihop eit lite oppmøte
+                til
+                dei to første kategoriane av sesongavslutninga.
+                Dermed har siste runde noko utslag i dataa, så desse er i nokre utrekningar ignorerte. Likevel så sikra
+                dette sikra 100% oppmøte for laget gjennom sesongen!
+            </p>
+
+        </div>
+
+
+        <div class="data-graph">
+            <div class="data-heading">Oppmøte</div>
+            <canvas id="roundsParticipationChart"></canvas>
+        </div>
+
+        <div class="text-section">
+            <p>Ikkje minst må vi takke dei kjekke innbyttarane vi har hatt denne sesongen, når gutane ikkje har klart å
+                stille fullt lag sjølv. Tusen takk Synnøve, Sara, Charlotte, Amanda og Oda. Utan <a
+                    href="https://ordbokene.no/nno/bm,nn/taus">kvennjetausene</a> hadde ikkje kvennjegutane klart seg ❤️
+            </p>
+            <h3>Kategoripoeng</h3>
+            <p>Gjennom sesongen har vi fått ymse poeng i kategoriane.</p>
+        </div>
 
         <div class="data-graph">
             <div class="data-heading">Kategorioeng pr runde</div>
             <canvas id="pointsPerCategoryChart"></canvas>
         </div>
-        <p>Her ser du ei gjennomsnitts-oppsummering av poenga gjennom sesongen samanlikna med maksimale poeng mogleg i
-            kvar kategori.</p>
-        <div class="data-selector-container">
-            <div class="data-selector">
-                <div class="data-selector-button selected" onclick="showAverages()" id="avgBtn">Gjennomsnitt</div>
-                <div class="data-selector-button" onclick="showStdDeviations()" id="stdDevBtn">Standardavvik</div>
+
+        <div class="text-section">
+            <p>Her ser du ei gjennomsnitts-oppsummering av poenga gjennom sesongen samanlikna med maksimale poeng mogleg
+                i
+                kvar kategori.</p>
+            <div class="data-selector-container">
+                <div class="data-selector">
+                    <div class="data-selector-button selected" onclick="showAverages()" id="avgBtn">Gjennomsnitt</div>
+                    <div class="data-selector-button" onclick="showStdDeviations()" id="stdDevBtn">Standardavvik</div>
+                </div>
             </div>
+            <div class="key-data-points" id="average">
+                <div class="key-data-point" title="Maksimale poeng: 12">
+                    <div class="key-data-point-header">Kategori 1</div>
+                    <div class="key-data-point-value">6,7</div>
+                    <div class="key-data-point-value-relation">
+                        <div class="key-data-point-value-relation-percentage" style="width: 56%;"></div>
+                    </div>
+                </div>
+                <div class="key-data-point" title="Maksimale poeng: 16">
+                    <div class="key-data-point-header">Kategori 2</div>
+                    <div class="key-data-point-value">7,9</div>
+                    <div class="key-data-point-value-relation">
+                        <div class="key-data-point-value-relation-percentage" style="width: 49%;"></div>
+                    </div>
+                </div>
+                <div class="key-data-point" title="Maksimale poeng: 16">
+                    <div class="key-data-point-header">Kategori 3</div>
+                    <div class="key-data-point-value">6,8</div>
+                    <div class="key-data-point-value-relation">
+                        <div class="key-data-point-value-relation-percentage" style="width: 43%;"></div>
+                    </div>
+                </div>
+                <div class="key-data-point" title="Maksimale poeng: 20">
+                    <div class="key-data-point-header">Kategori 4</div>
+                    <div class="key-data-point-value">10,5</div>
+                    <div class="key-data-point-value-relation">
+                        <div class="key-data-point-value-relation-percentage" style="width: 53%;"></div>
+                    </div>
+                </div>
+                <div class="key-data-point" title="Maksimale poeng: 32">
+                    <div class="key-data-point-header">Kategori 5</div>
+                    <div class="key-data-point-value">15,6</div>
+                    <div class="key-data-point-value-relation">
+                        <div class="key-data-point-value-relation-percentage" style="width: 49%;"></div>
+                    </div>
+                </div>
+                <div class="key-data-point" title="Maksimale poeng: 30">
+                    <div class="key-data-point-header">Kategori 6</div>
+                    <div class="key-data-point-value">12,6</div>
+                    <div class="key-data-point-value-relation">
+                        <div class="key-data-point-value-relation-percentage" style="width: 42%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="key-data-points" id="stdDeviation">
+                <div class="key-data-point">
+                    <div class="key-data-point-header">Kategori 1</div>
+                    <div class="key-data-point-value">2,1</div>
+                    <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+                </div>
+                <div class="key-data-point">
+                    <div class="key-data-point-header">Kategori 2</div>
+                    <div class="key-data-point-value">2,5</div>
+                    <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+                </div>
+                <div class="key-data-point">
+                    <div class="key-data-point-header">Kategori 3</div>
+                    <div class="key-data-point-value">1,5</div>
+                    <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+                </div>
+                <div class="key-data-point">
+                    <div class="key-data-point-header">Kategori 4</div>
+                    <div class="key-data-point-value">4,4</div>
+                    <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+                </div>
+                <div class="key-data-point">
+                    <div class="key-data-point-header">Kategori 5</div>
+                    <div class="key-data-point-value">3,8</div>
+                    <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+                </div>
+                <div class="key-data-point">
+                    <div class="key-data-point-header">Kategori 6</div>
+                    <div class="key-data-point-value">3,8</div>
+                    <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
+                </div>
+            </div>
+            <p>Som ein kan sjå så ligg vi jamn over ganske midt på poengmessig. Frå standardavvika kan vi sjå at vi er
+                mest
+                konsise i dei første kategoriane – altså konsist litt dårlege… Litt meir spreidning i dei siste
+                kategoriane, men
+                heldigvis er her mykje poeng å hente. Og dette gjer vi periodisk,
+                så desse poenga gjer at vi brukar å klatre litt på tampen av runda.</p>
+            <h3>Lokalisering og seteplassering</h3>
+            <p>Gjennom sesongen har vi også notert ned plassering i lokalet. Når ein ser på lokaliseringsskifta (t.d.
+                ved
+                inngangsdøra mot TTYVEN), kan sjå om det er noko korrelasjon med prestasjon. For eksempel ser runder
+                spelte
+                på TYVEN ut til å gi
+                varierande, men generelt gode, resultat. Er dette potensielt på grunn av eit betre miljø og meir eigna
+                quizmiljø enn Diskoteket? Det skal nemnast at vi ikkje har stor nok samplingsmengde på <a
+                    href="https://trdby.adressa.no/uteliv/i/QMl848/utestedet-aapner-i-ny-drakt-utrolig-goey"
+                    target="_blank">Diskoteket etter oppussinga</a>.
+            </p>
+            <h3>Relativ rangering</h3>
+            <p>
+                Forholdet mellom plassering og deltakande lag gir oss litt innsikt i kor godt laget gjer det relativt
+                til
+                konkurrentane våre. Ein høgare
+                verdi, ein verdi nærare 1, tyder på dårlegare relativ prestasjon. Vi ser at gutane strekk seg mot 1
+                heile
+                tida, som tyder på at laga rundt oss generelt er quizkvassare.
+            </p>
         </div>
-        <div class="key-data-points" id="average">
-            <div class="key-data-point" title="Maksimale poeng: 12">
-                <div class="key-data-point-header">Kategori 1</div>
-                <div class="key-data-point-value">6,7</div>
-                <div class="key-data-point-value-relation">
-                    <div class="key-data-point-value-relation-percentage" style="width: 56%;"></div>
-                </div>
-            </div>
-            <div class="key-data-point" title="Maksimale poeng: 16">
-                <div class="key-data-point-header">Kategori 2</div>
-                <div class="key-data-point-value">7,9</div>
-                <div class="key-data-point-value-relation">
-                    <div class="key-data-point-value-relation-percentage" style="width: 49%;"></div>
-                </div>
-            </div>
-            <div class="key-data-point" title="Maksimale poeng: 16">
-                <div class="key-data-point-header">Kategori 3</div>
-                <div class="key-data-point-value">6,8</div>
-                <div class="key-data-point-value-relation">
-                    <div class="key-data-point-value-relation-percentage" style="width: 43%;"></div>
-                </div>
-            </div>
-            <div class="key-data-point" title="Maksimale poeng: 20">
-                <div class="key-data-point-header">Kategori 4</div>
-                <div class="key-data-point-value">10,5</div>
-                <div class="key-data-point-value-relation">
-                    <div class="key-data-point-value-relation-percentage" style="width: 53%;"></div>
-                </div>
-            </div>
-            <div class="key-data-point" title="Maksimale poeng: 32">
-                <div class="key-data-point-header">Kategori 5</div>
-                <div class="key-data-point-value">15,6</div>
-                <div class="key-data-point-value-relation">
-                    <div class="key-data-point-value-relation-percentage" style="width: 49%;"></div>
-                </div>
-            </div>
-            <div class="key-data-point" title="Maksimale poeng: 30">
-                <div class="key-data-point-header">Kategori 6</div>
-                <div class="key-data-point-value">12,6</div>
-                <div class="key-data-point-value-relation">
-                    <div class="key-data-point-value-relation-percentage" style="width: 42%;"></div>
-                </div>
-            </div>
-        </div>
-        <div class="key-data-points" id="stdDeviation">
-            <div class="key-data-point">
-                <div class="key-data-point-header">Kategori 1</div>
-                <div class="key-data-point-value">2,1</div>
-                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
-            </div>
-            <div class="key-data-point">
-                <div class="key-data-point-header">Kategori 2</div>
-                <div class="key-data-point-value">2,5</div>
-                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
-            </div>
-            <div class="key-data-point">
-                <div class="key-data-point-header">Kategori 3</div>
-                <div class="key-data-point-value">1,5</div>
-                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
-            </div>
-            <div class="key-data-point">
-                <div class="key-data-point-header">Kategori 4</div>
-                <div class="key-data-point-value">4,4</div>
-                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
-            </div>
-            <div class="key-data-point">
-                <div class="key-data-point-header">Kategori 5</div>
-                <div class="key-data-point-value">3,8</div>
-                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
-            </div>
-            <div class="key-data-point">
-                <div class="key-data-point-header">Kategori 6</div>
-                <div class="key-data-point-value">3,8</div>
-                <div style="height: .5em; padding-top: .1em; padding-bottom: .1em;"></div>
-            </div>
-        </div>
-        <p>Som ein kan sjå så ligg vi jamnt over ganske midt på poengmessig. Frå standardavvika kan vi sjå at vi er mest
-            konsise i dei første kategoriane – altså konsist litt dårlege. Litt meir spreidning i dei siste, men
-            heldigvis er her mykje poeng å hente. Og dette gjer vi periodisk,
-            så desse poenga gjer at vi brukar å klatre litt på tampen av runda.</p>
-        <h3>Lokalisering og seteplassering</h3>
-        <p>Gjennom sesongen har vi også notert ned plassering i lokalet. Når ein ser på lokaliseringsskifta (t.d. ved
-            inngangsdøra mot TTYVEN), kan sjå om det er noko korrelasjon med prestasjon. For eksempel ser runder spelte
-            på TYVEN ut til å gi
-            varierande, men generelt gode, resultat. Er dette potensielt på grunn av eit betre miljø og meir eigna
-            quizmiljø enn Diskoteket? Det skal nemnast at vi ikkje har stor nok samplingsmengde på <a
-                href="https://trdby.adressa.no/uteliv/i/QMl848/utestedet-aapner-i-ny-drakt-utrolig-goey"
-                target="_blank">Diskoteket etter oppussinga</a>.
-        </p>
-        <h3>Relativ rangering</h3>
-        <p>
-            Forholdet mellom plassering og deltakande lag gir oss litt innsikt i kor godt laget gjer det relativt til
-            konkurrentane våre. Ein høgare
-            verdi, ein verdi nærare 1, tyder på dårlegare relativ prestasjon. Vi ser at gutane strekk seg mot 1 heile
-            tida, som tyder på at laga rundt oss generelt er quizkvassare.
-        </p>
+
         <div class="data-graph" id="relativePositionChartContainer">
             <div class="data-heading">Relativ resultats-plassering</div>
             <canvas id="relativePositionChart"></canvas>
         </div>
-        <h3>Strategiske tiltak til neste sesong</h3>
-        <ul>
-            <li>Fokusområde</li>
+
+        <div class="text-section">
+            <h3>Strategiske tiltak til neste sesong</h3>
             <ul>
-                <li>Bruke dei identifiserte styrkene og svakheitene til vår fordel og konsentrere oss om å forbetre
-                    prestasjon i dei svakare kategoriane</li>
+                <li>Fokusområde</li>
+                <ul>
+                    <li>Bruke dei identifiserte styrkene og svakheitene til vår fordel og konsentrere oss om å forbetre
+                        prestasjon i dei svakare kategoriane</li>
+                </ul>
+                <li>Lagdybamikk</li>
+                <ul>
+                    <li>Analysere om visse kombinasjonar av lagmedlem fungerar betre saman for å sikre best resultat
+                    </li>
+                </ul>
+                <li>Førebuing</li>
+                <ul>
+                    <li>Auke mengde førebuing før quizar basert på observert svakare kategoriar for å heve den samla
+                        poengsummen</li>
+                </ul>
             </ul>
-            <li>Lagdybamikk</li>
-            <ul>
-                <li>Analysere om visse kombinasjonar av lagmedlem fungerar betre saman for å sikre best resultat</li>
-            </ul>
-            <li>Førebuing</li>
-            <ul>
-                <li>Auke mengde førebuing før quizar basert på observert svakare kategoriar for å heve den samla
-                    poengsummen</li>
-            </ul>
-        </ul>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

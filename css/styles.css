@@ -106,10 +106,26 @@ h3 {
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
-  max-width: 60em;
-
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.text-section {
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    max-width: 70%;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 60%;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 90%;
+  }
+}
 
 p,
 ul {
@@ -123,12 +139,17 @@ ul {
 .data-graph {
   background-color: #191C24;
   padding: 2em;
-  min-height: 15em;
-  max-height: 25em;
-  min-width: 30em;
-  /* width: 100vw; */
   border-radius: .5em;
   margin: 2em;
+  min-height: 15em;
+  max-height: 25em;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1024px) {
+    width: 60%;
+  }
 }
 
 
@@ -289,4 +310,17 @@ a:hover {
   border: #191C24 0.1em solid;
   border-radius: .7em;
   color: #191C24;
+}
+
+.definition {
+  max-width: 15em;
+}
+
+.phonetics {
+  margin-bottom: .8em;
+}
+
+.definition-explanation {
+  font-weight: lighter;
+  font-size: medium;
 }

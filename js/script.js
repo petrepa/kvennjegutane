@@ -18,9 +18,22 @@ document.addEventListener('DOMContentLoaded', function () {
             }]
         },
         options: {
+            plugins: {
+                legend: {
+                    display: false  // Hide the legend
+                }
+            },
             scales: {
                 y: {
-                    beginAtZero: true  // Start the y-axis at 0
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#F5F5F5'  // Color of X-axis labels
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#F5F5F5'  // Color of X-axis labels (participant names)
+                    }
                 }
             },
             responsive: true,  // Ensure the graph is responsive
@@ -54,7 +67,15 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             scales: {
                 y: {
-                    beginAtZero: true  // Start the y-axis at 0
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#F5F5F5'  // Color of X-axis labels
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#F5F5F5'  // Color of X-axis labels (participant names)
+                    }
                 }
             },
             responsive: true,  // Ensure the graph is responsive
@@ -94,14 +115,25 @@ document.addEventListener('DOMContentLoaded', function () {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true  // Start the y-axis at 0
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#F5F5F5'  // Color of X-axis labels
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#F5F5F5'  // Color of X-axis labels (participant names)
+                    }
                 }
             },
             responsive: true,  // Ensure the graph is responsive
             maintainAspectRatio: false,  // Do not maintain aspect ratio to allow custom resizing
             plugins: {
                 legend: {
-                    position: 'top'  // Position the legend at the top of the chart
+                    position: 'top',  // Position the legend at the top of the chart
+                    labels: {
+                        color: '#F5F5F5'  // Color of legend labels
+                    }
                 }
             }
         }
@@ -124,3 +156,69 @@ function showStdDeviations() {
     document.getElementById('avgBtn').classList.remove('selected');
     document.getElementById('stdDevBtn').classList.add('selected');
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('roundsParticipationChart').getContext('2d');
+
+    // Data for participants and rounds
+    const participants = ['Peter', 'Østen', 'Håvard Olai', 'Truls', 'Marcus', 'Elias'];
+    const rounds = [11, 9, 7, 5, 9, 4];
+
+    // Combine participants and rounds into an array of objects for sorting
+    const data = participants.map((participant, index) => ({
+        participant: participant,
+        rounds: rounds[index]
+    }));
+
+    // Sort data in descending order based on rounds participated
+    data.sort((a, b) => b.rounds - a.rounds);
+
+    // Extract sorted participants and rounds back into separate arrays
+    const sortedParticipants = data.map(entry => entry.participant);
+    const sortedRounds = data.map(entry => entry.rounds);
+
+    const roundsParticipationChart = new Chart(ctx, {
+        type: 'bar',  // Type of chart: bar chart
+        data: {
+            labels: sortedParticipants,  // X-axis labels (participants sorted by rounds)
+            datasets: [{
+                label: 'Number of Rounds Participated',
+                data: sortedRounds,  // Y-axis data (number of rounds sorted)
+                backgroundColor: 'rgba(204, 23, 24, 0.5)',  // Color of the bars
+                borderColor: 'rgba(204, 23, 24, 1)',  // Border color of the bars
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false,  // Hide the legend (optional)
+                    color: '#F5F5F5'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#F5F5F5',  // Color of Y-axis labels
+                        callback: function (value, index, values) {
+                            if (value === 11) {  // Check if the tick value is 11
+                                return '';  // Return empty string to hide the tick
+                            } else {
+                                return value;  // Otherwise, return the tick value as it is
+                            }
+                        }
+                    },
+                    max: 11
+                },
+                x: {
+                    ticks: {
+                        color: '#F5F5F5'  // Color of X-axis labels (participant names)
+                    }
+                }
+            },
+            responsive: true,  // Ensure the chart is responsive
+            maintainAspectRatio: false  // Maintain aspect ratio
+        }
+    });
+});
