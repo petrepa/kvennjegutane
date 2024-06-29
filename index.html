@@ -51,40 +51,59 @@
             dette sikra 100% oppmøte for laget gjennom sesongen!
         </p>
         <h3>Kategoripoeng</h3>
+
+        <div class="data-graph">
+            <div class="data-heading">Kategorioeng pr runde</div>
+            <canvas id="pointsPerCategoryChart"></canvas>
+        </div>
+        <p>Her ser du ei gjennomsnitts-oppsummering av poenga gjennom sesongen samanlikna med maksimale poeng mogleg i
+            kvar kategori.</p>
         <div class="key-data-points">
-            <div class="key-data-point">
+            <div class="key-data-point" title="Maksimale poeng: 12">
                 <div class="key-data-point-header">Kategori 1</div>
                 <div class="key-data-point-value">6,7</div>
                 <div class="key-data-point-value-relation">
                     <div class="key-data-point-value-relation-percentage" style="width: 56%;"></div>
                 </div>
             </div>
-            <div class="key-data-point">
+            <div class="key-data-point" title="Maksimale poeng: 16">
                 <div class="key-data-point-header">Kategori 2</div>
                 <div class="key-data-point-value">7,9</div>
+                <div class="key-data-point-value-relation">
+                    <div class="key-data-point-value-relation-percentage" style="width: 49%;"></div>
+                </div>
             </div>
-            <div class="key-data-point">
+            <div class="key-data-point" title="Maksimale poeng: 16">
                 <div class="key-data-point-header">Kategori 3</div>
                 <div class="key-data-point-value">6,8</div>
+                <div class="key-data-point-value-relation">
+                    <div class="key-data-point-value-relation-percentage" style="width: 43%;"></div>
+                </div>
             </div>
-            <div class="key-data-point">
+            <div class="key-data-point" title="Maksimale poeng: 20">
                 <div class="key-data-point-header">Kategori 4</div>
                 <div class="key-data-point-value">10,5</div>
+                <div class="key-data-point-value-relation">
+                    <div class="key-data-point-value-relation-percentage" style="width: 53%;"></div>
+                </div>
             </div>
-            <div class="key-data-point">
+            <div class="key-data-point" title="Maksimale poeng: 32">
                 <div class="key-data-point-header">Kategori 5</div>
                 <div class="key-data-point-value">15,6</div>
+                <div class="key-data-point-value-relation">
+                    <div class="key-data-point-value-relation-percentage" style="width: 49%;"></div>
+                </div>
             </div>
-            <div class="key-data-point">
+            <div class="key-data-point" title="Maksimale poeng: 30">
                 <div class="key-data-point-header">Kategori 6</div>
                 <div class="key-data-point-value">12,6</div>
+                <div class="key-data-point-value-relation">
+                    <div class="key-data-point-value-relation-percentage" style="width: 42%;"></div>
+                </div>
             </div>
         </div>
-        <p>Styrker: Kategori 4 og 5 har ofte høgare poengsum, noko som anten indikerer eit betre grep om desse faga
-            eller muligens lettare spørsmål i desse kategoriane.</p>
-        <p><strong>Svakheiter: </strong>Kategori 1 og 2 har varierte poengsummar, noko som kan tyde på at dette er
-            område kor laget
-            kunne forbetra seg med målretta førebuing.</p>
+        <p>Som ein kan sjå så ligg vi jamnt over ganske midt på poengmessig. Heldigvis får vi også mykje poeng i dei
+            siste kategoriane. Desse poenga gjer at vi brukar å klatre litt på tampen av runda.</p>
         <h3>Lokalisering og seteplassering</h3>
         <p>Gjennom sesongen har vi også notert ned plassering i lokalet. Når ein ser på lokaliseringsskifta (t.d. ved
             inngangsdøra mot TTYVEN), kan sjå om det er noko korrelasjon med prestasjon. For eksempel ser runder spelte
@@ -124,10 +143,6 @@
         <canvas id="pointsChart"></canvas>
     </div>
 
-    <div class="data-graph">
-        <div class="data-heading">Kategorioeng pr runde</div>
-        <canvas id="pointsPerCategoryChart"></canvas>
-    </div>
 
     <script src="js/script.js"></script>
 </body>

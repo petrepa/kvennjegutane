@@ -126,16 +126,11 @@ ul {
   min-height: 15em;
   max-height: 25em;
   min-width: 30em;
-  max-width: 90%;
+  /* width: 100vw; */
   border-radius: .5em;
   margin: 2em;
 }
 
-#pointsChart {
-  height: auto;
-  width: 90%;
-
-}
 
 .data-heading {
   font-family: 'Fira Sans', sans-serif;
@@ -169,18 +164,63 @@ a:hover {
 }
 
 .key-data-point {
-  /* border: #CC1718 1px solid; */
   border-radius: 1.5em;
   padding: 1em;
-  background-color: #191C24;
+  background-color: #191c24;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* align-content: space-between; */
   flex-direction: column;
   width: 6em;
   height: 6em;
   margin: 1em;
+  position: relative;
+  /* Ensure relative positioning for tooltip */
+}
+
+/* Tooltip styling */
+.key-data-point::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -1.5em;
+  /* Adjust distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #191c24;
+  /* Background color same as parent */
+  color: #fff;
+  /* Text color */
+  padding: 0.5em;
+  border-radius: 0.5em;
+  font-size: 0.8em;
+  opacity: 0;
+  /* Initially hidden */
+  pointer-events: none;
+  /* Prevent interaction with tooltip */
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  /* Ensure tooltip is above content */
+}
+
+/* Show tooltip on focus (keyboard) or hover (desktop) */
+.key-data-point:hover::after,
+.key-data-point:focus::after {
+  opacity: 1;
+}
+
+/* For mobile, show tooltip on tap/click */
+@media (max-width: 768px) {
+  .key-data-point::after {
+    opacity: 0;
+    /* Hide tooltip by default on mobile */
+    transition: opacity 0.3s ease;
+  }
+
+  .key-data-point:focus::after,
+  .key-data-point.tapped::after {
+    opacity: 1;
+    /* Show tooltip on tap/click */
+  }
 }
 
 .key-data-point-header {
@@ -210,5 +250,8 @@ a:hover {
   background-color: #085C37;
   height: 100%;
   border-radius: 1em;
-  border: #191C24 .1em solid;
+  border: #085C37 .1em solid;
+  box-shadow:
+    0 0 10px #085C37,
+    0 0 10px #5ba757;
 }

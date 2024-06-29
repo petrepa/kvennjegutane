@@ -73,3 +73,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+<script>
+    function showAverages() {
+        // Hide standard deviations and show averages
+        document.querySelectorAll('.key-data-point').forEach(point => {
+            point.querySelector('.key-data-point-value').style.display = 'block';
+            point.querySelector('.key-data-point-std').style.display = 'none';
+        });
+    }
+
+    function showStdDeviations() {
+        // Hide averages and show standard deviations
+        document.querySelectorAll('.key-data-point').forEach(point => {
+            point.querySelector('.key-data-point-value').style.display = 'none';
+            point.querySelector('.key-data-point-std').style.display = 'block';
+        });
+    }
+</script>
